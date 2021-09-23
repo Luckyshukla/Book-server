@@ -1,9 +1,9 @@
 package repository
 import(
-	"github.com/gin-gonic/gin"
+	//"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 	"gorm.io/driver/sqlite"
-	"main.go/entity"
+	"server.go/entity"
 )
 type VideoRepository interface{
 	Save(video entity.Video)
@@ -16,9 +16,10 @@ type database struct{
 	connection *gorm.DB
 }
 func NewVideoRepository() VideoRepository {
-	db, err := gorm.Open("sqlite3", "test.db")
+	//db, err := gorm.Open(sqlite.Open("test.db")
+	db, err := gorm.Open(sqlite.Open("test.db"), &gorm.Config{})
 	if err != nil {
-		panic("Failed to connect database")
+	  panic("failed to connect database")
 	}
 	db.AutoMigrate(&entity.Video{}, &entity.Person{})
 	return &database{

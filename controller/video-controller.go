@@ -5,9 +5,9 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"main.go/entity"
-	"main.go/service"
 	"github.com/go-playground/validator/v10"
+	"server.go/entity"
+	"server.go/service"
 )
 
 type VideoController interface {

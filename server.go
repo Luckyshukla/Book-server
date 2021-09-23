@@ -5,17 +5,18 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
-	"main.go/controller"
-	"main.go/middlewares"
-	"main.go/repository"
-	"main.go/service"
+	"server.go/controller"
+	"server.go/middlewares"
+	"server.go/repository"
+	"server.go/service"
 )
 
 var (
 	videoRepository repository.VideoRepository = repository.NewVideoRepository()
-	videoService    service.VideoService       = service.New(videoRepository)
-	loginService    service.LoginService       = service.NewLoginService()
-	jwtService      service.JWTService         = service.NewJWTService()
+	//videoRepository repository.VideoRepository = repository.NewVideoRepository()
+	videoService service.VideoService = service.New(videoRepository)
+	loginService service.LoginService = service.NewLoginService()
+	jwtService   service.JWTService   = service.NewJWTService()
 
 	videoController controller.VideoController = controller.New(videoService)
 	loginController controller.LoginController = controller.NewLoginController(loginService, jwtService)

@@ -1,9 +1,10 @@
 package service
-import(
-	"github.com/gin-gonic/gin"
-	"main.go/repository"
-	"main.go/entity"
+
+import (
+	"server.go/entity"
+	"server.go/repository"
 )
+
 type VideoService interface {
 	Save(entity.Video) error
 	Update(entity.Video) error

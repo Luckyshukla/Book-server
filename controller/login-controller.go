@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"main.go/dto"
-	"main.go/service"
+	"server.go/dto"
+	"server.go/service"
 )
 
 func temp(c *gin.Context)  {

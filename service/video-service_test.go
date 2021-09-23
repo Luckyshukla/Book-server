@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gitlab.com/pragmaticreviews/golang-gin-poc/entity"
+	"server.go/entity"
 )
 
 const (

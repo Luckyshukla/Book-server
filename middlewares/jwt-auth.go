@@ -1,12 +1,14 @@
-
 package middlewares
+
 import (
 	"log"
 	"net/http"
 
-	"github.com/dgrijalva/jwt-go"
+	jwt "github.com/golang-jwt/jwt/v4"
+
+	//jwt "github.com/appleboy/gin-jwt"
 	"github.com/gin-gonic/gin"
-	"gitlab.com/pragmaticreviews/golang-gin-poc/service"
+	"server.go/service"
 )
 
 // AuthorizeJWT validates the token from the http request, returning a 401 if it's not valid
